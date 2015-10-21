@@ -1,0 +1,6 @@
+[user]
+	email = charles@charlestracker.com
+	name = Charles
+[core]
+	preloadindex = true
+	autocrlf = false
