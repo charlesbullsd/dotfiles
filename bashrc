@@ -5,7 +5,7 @@
 case $TERM in
     screen*)
 	    export PROMPT_COMMAND=/usr/bin/true
-        [ "$PS1" = "\\s-\\v\\\$ " ] && PS1="[\u@\h \W]\\$ "
 esac
+[ "$PS1" = "\\s-\\v\\\$ " ] && PS1="[\u@\h \W]\\$ "
 
 # vim: ts=4 sts=4 sw=4 et
