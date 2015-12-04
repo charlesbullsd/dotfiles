@@ -112,3 +112,9 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+syntax enable
+if filereadable( expand("$HOME/.vim/colors/solarized.vim") )
+    set background=dark
+    colorscheme solarized
+endif
