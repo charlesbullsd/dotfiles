@@ -1,16 +1,21 @@
 ! URxvt
 
+! To make this work...on centos, you have to do some tweaking. You have
+! to take and run cpp -E <path-to-this-file> > ~/.Xdefaults
+! Since it has to have expanded macros, but, it seems to fail after the
+! initial xrdb -merge
+
 ! General settings
-URxvt.saveLines: 2000
+!URxvt.saveLines: 2000
 URxvt.scrollBar: False
 URxvt.scrollstyle: rxvt
 URxvt.termName: xterm-256color
-URxvt.urgentOnBell: True
-URxvt.cursorBlink: False
+!URxvt.urgentOnBell: True
+!URxvt.cursorBlink: False
 
 ! Extensions
-URxvt.perl-ext-common: default,clipboard,keyboard-select,url-select
-URxvt.urlLauncher: xdg-open
+!URxvt.perl-ext-common: default,clipboard,keyboard-select,url-select
+!URxvt.urlLauncher: xdg-open
 URxvt.urlButton: 1
 URxvt.underlineURLs: True
 
@@ -30,13 +35,17 @@ URxvt.pasteCommand: xclip -o -selection clipboard
 
 ! Fonts
 
+!Source Code Pro
+URxvt.font: xft:Source Code Pro Medium-10
+URxvt.letterSpace: -1
+
 !Courier
 !URxvt.font: xft:Courier-10
 
 !Inconsolata
-URxvt.font: xft:Inconsolata-10
-URxvt.boldFont: xft:Inconsolata-10
-URxvt.letterSpace: -1
+!URxvt.font: xft:Inconsolata-10
+!URxvt.boldFont: xft:Inconsolata-10
+!URxvt.letterSpace: -1
 
 !Inconsolata-g
 !URxvt.font: xft:InconsolataG-10
@@ -65,35 +74,7 @@ URxvt.letterSpace: -1
 !Terminus
 !URxvt.font: xft:Terminus-10
 
-! Tango theme
 
-URxvt.background: #1C1C1C
-URxvt.foreground: #DEDEDE
-
-! black
-URxvt.color0  : #2E3436
-URxvt.color8  : #555753
-! red
-URxvt.color1  : #CC0000
-URxvt.color9  : #EF2929
-! green
-URxvt.color2  : #4E9A06
-URxvt.color10 : #8AE234
-! yellow
-URxvt.color3  : #C4A000
-URxvt.color11 : #FCE94F
-! blue
-URxvt.color4  : #3465A4
-URxvt.color12 : #729FCF
-! magenta
-URxvt.color5  : #75507B
-URxvt.color13 : #AD7FA8
-! cyan
-URxvt.color6  : #06989A
-URxvt.color14 : #34E2E2
-! white
-URxvt.color7  : #D3D7CF
-URxvt.color15 : #EEEEEC
 
 ! XTerm
 
@@ -111,8 +92,8 @@ XTerm*locale: True
 XTerm*utf8Title: True
 XTerm*renderFont: True
 XTerm*preeditType: Root
-XTerm*xftAntialias: true
-XTerm*faceName: xft:Inconsolata-10
+XTerm*xftAntialias: True
+XTerm*faceName: xft:Source Code Pro Medium-10
 
 ! Trim trailing spaces
 XTerm*trimSelection: true
@@ -129,33 +110,94 @@ XTerm*translations: #override \
 ! Allow selecting email/url by double-click
 XTerm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
 
-! Tango Theme
-XTerm*background: #1C1C1C
-XTerm*foreground: #DEDEDE
+!-------------------------------------------------------------------------------
+! URxvt settings
+! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
+! More info at:
+! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
+!-------------------------------------------------------------------------------
 
-! black
-XTerm*color0  : #2E3436
-XTerm*color8  : #555753
-! red
-XTerm*color1  : #CC0000
-XTerm*color9  : #EF2929
-! green
-XTerm*color2  : #4E9A06
-XTerm*color10 : #8AE234
-! yellow
-XTerm*color3  : #C4A000
-XTerm*color11 : #FCE94F
-! blue
-XTerm*color4  : #3465A4
-XTerm*color12 : #729FCF
-! magenta
-XTerm*color5  : #75507B
-XTerm*color13 : #AD7FA8
-! cyan
-XTerm*color6  : #06989A
-XTerm*color14 : #34E2E2
-! white
-XTerm*color7  : #D3D7CF
-XTerm*color15 : #EEEEEC
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               40
+! URxvt.urgentOnBell:         true
+! URxvt.visualBell:           true
+URxvt.loginShell:           true
+URxvt.saveLines:            50
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
 
 
+! Fix the Home/End Keys in term
+URxvt.keysym.Home: \033[1~
+URxvt.keysym.End: \033[4~
+URxvt.keysym.KP_Home: \033[1~
+URxvt.keysym.KP_End:  \033[4~
+
+! SOLARIZED
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+*background:            S_base03
+*foreground:            S_base0
+*fadeColor:             S_base03
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+!! black dark/light
+*color0:                S_base02
+*color8:                S_base03
+
+!! red dark/light
+*color1:                S_red
+*color9:                S_orange
+
+!! green dark/light
+*color2:                S_green
+*color10:               S_base01
+
+!! yellow dark/light
+*color3:                S_yellow
+*color11:               S_base00
+
+!! blue dark/light
+*color4:                S_blue
+*color12:               S_base0
+
+!! magenta dark/light
+*color5:                S_magenta
+*color13:               S_violet
+
+!! cyan dark/light
+*color6:                S_cyan
+*color14:               S_base1
+
+!! white dark/light
+*color7:                S_base2
+*color15:               S_base3
