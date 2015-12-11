@@ -113,6 +113,10 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+if filereadable( expand("$HOME/.vim/autoload/pathogen.vim") )
+    execute pathogen#infect()
+endif
+
 syntax enable
 if filereadable( expand("$HOME/.vim/colors/solarized.vim") )
     set background=dark
