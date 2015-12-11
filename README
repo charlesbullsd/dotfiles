@@ -1,2 +1,7 @@
 Just a few dotfiles...slowly porting some from a private repo to the 
 public github.
+
+If a file contains a different license, ignore the UNLICENSE and use
+whatever the individual files have. I say that because I have some
+code that is mixed into the dot files that I pulled from other
+places.
