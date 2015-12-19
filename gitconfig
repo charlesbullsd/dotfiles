@@ -1,6 +1,11 @@
 [user]
-	email = charles@charlestracker.com
+	email = charlestracker@users.noreply.github.com
 	name = Charles
+
+
 [core]
 	preloadindex = true
 	autocrlf = false
+
+[push]
+	default = simple

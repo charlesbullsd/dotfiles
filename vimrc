@@ -117,7 +117,10 @@ if filereadable( expand("$HOME/.vim/autoload/pathogen.vim") )
     execute pathogen#infect()
 endif
 
+au BufRead,BufNewFile *.asc set filetype=asciidoc
+
 syntax enable
+
 if filereadable( expand("$HOME/.vim/colors/solarized.vim") )
     set background=dark
     colorscheme solarized
