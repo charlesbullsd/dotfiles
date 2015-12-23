@@ -8,4 +8,8 @@
 	autocrlf = false
 
 [push]
-	default = simple
+    default = simple
+
+[alias]
+    graph = log --abbrev-commit --oneline --all --graph --decorate --color
+
