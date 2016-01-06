@@ -17,4 +17,14 @@ case $TERM in
 esac
 [ "$PS1" = "\\s-\\v\\\$ " ] && PS1="[\u@\h \W]\\$ "
 
+command -v dnf >/dev/null 2>&1
+if [ "$?" -eq "0" ]; then
+    alias dnf='sudo dnf'
+fi
+
+command -v yum >/dev/null 2>&1
+if [ "$?" -eq "0" ]; then
+    alias yum='sudo yum'
+fi
+
 # vim: ts=4 sts=4 sw=4 et
