@@ -15,6 +15,7 @@ case $TERM in
     screen*)
 	    export PROMPT_COMMAND=/usr/bin/true
 esac
+
 [ "$PS1" = "\\s-\\v\\\$ " ] && PS1="[\u@\h \W]\\$ "
 
 command -v dnf >/dev/null 2>&1
