@@ -1,15 +1,15 @@
 [user]
-	email = charlestracker@users.noreply.github.com
-	name = Charles
+email = charlestracker@users.noreply.github.com
+name = Charles
 
 
 [core]
-	preloadindex = true
-	autocrlf = false
+preloadindex = true
+autocrlf = false
 
 [push]
-    default = simple
+default = simple
 
 [alias]
-    graph = log --abbrev-commit --oneline --all --graph --decorate --color
+graph = log --abbrev-commit --oneline --all --graph --decorate --color
 
