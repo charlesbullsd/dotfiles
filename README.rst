@@ -1,4 +1,6 @@
-= My Dot Files =
+
+My Dot Files
+============
 
 Just a few dotfiles...slowly porting some from a private repo to the 
 public github.
