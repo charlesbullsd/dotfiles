@@ -16,19 +16,6 @@ else
   set backup		" keep a backup file
 endif
 
-if isdirectory($HOME . '/.vim/tmp') == 0
-    :silent !mkdir -p ~/.vim/tmp >/dev/null 2>&1
-endif
-set backupdir-=.
-set backupdir+=.
-set backupdir-=~/
-set backupdir^=~/.vim/tmp/
-set backupdir^=./.vim/tmp/
-
-set directory=./.vim/tmp//
-set directory+=~/.vim/tmp//
-set directory+=.
-
 set ts=4 sw=4 sts=4 et
 
 set history=50		" keep 50 lines of command line history
@@ -102,7 +89,7 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-if filereadable( expand("$HOME/.vim/autoload/pathogen.vim") )
+if filereadable( expand("$HOME/.vim/pathogen.vim") )
     execute pathogen#infect()
 endif
 
