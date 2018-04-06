@@ -90,11 +90,13 @@ if !exists(":DiffOrig")
 endif
 
 if filereadable( expand("$HOME/.vim/pathogen.vim") )
+    source $HOME/.vim/pathogen.vim
     execute pathogen#infect()
 endif
 
 au BufRead,BufNewFile *.asc set filetype=asciidoc
 
 syntax enable
-
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
 set background=dark
