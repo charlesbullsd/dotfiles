@@ -110,7 +110,4 @@ au BufRead,BufNewFile *.asc set filetype=asciidoc
 
 syntax enable
 
-if filereadable( expand("$HOME/.vim/colors/solarized.vim") )
-    set background=dark
-    colorscheme solarized
-endif
+set background=dark
