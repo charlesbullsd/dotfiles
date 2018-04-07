@@ -10,18 +10,6 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file
-endif
-
-set ts=4 sw=4 sts=4 et
-
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
 
 
 
@@ -89,14 +77,22 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+set nobackup
+set ts=4 sw=4 sts=4 et
+
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
+
+set background=dark
+
+au BufRead,BufNewFile *.asc set filetype=asciidoc
+
 if filereadable( expand("$HOME/.vim/pathogen.vim") )
     source $HOME/.vim/pathogen.vim
     execute pathogen#infect()
 endif
 
-au BufRead,BufNewFile *.asc set filetype=asciidoc
-
-syntax enable
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
-set background=dark
