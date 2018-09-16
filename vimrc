@@ -78,12 +78,17 @@ if !exists(":DiffOrig")
 endif
 
 set nobackup
-set ts=4 sw=4 sts=4 et
+"set ts=4 sw=4 sts=4 et
+set ts=8 sw=8 sts=0 noet
 
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50		        " keep 50 lines of command line history
+set ruler		        " show the cursor position all the time
+set showcmd		        " display incomplete commands
+set incsearch		        " do incremental searching
+
+"set rulerformat=%l,%v
+set statusline+=%F\ %l\:%c
+set listchars=tab:→\ ,trail:·,precedes:«,extends:»,eol:¶
 
 set background=dark
 
