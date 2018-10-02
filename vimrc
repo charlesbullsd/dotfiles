@@ -79,7 +79,7 @@ endif
 
 set nobackup
 "set ts=4 sw=4 sts=4 et
-set ts=8 sw=8 sts=0 noet
+set ts=8 sw=8 sts=0 noet smarttab
 
 set history=50		        " keep 50 lines of command line history
 set ruler		        " show the cursor position all the time
@@ -95,8 +95,12 @@ set background=dark
 au BufRead,BufNewFile *.asc set filetype=asciidoc
 
 if filereadable( expand("$HOME/.vim/pathogen.vim") )
-    source $HOME/.vim/pathogen.vim
-    execute pathogen#infect()
+	source $HOME/.vim/pathogen.vim
+	let g:pathogen_disabled = []
+	call add(g:pathogen_disabled, 'vim-obsession')
+	call add(g:pathogen_disabled, 'mustache')
+	call add(g:pathogen_disabled, 'nerdtree')
+	execute pathogen#infect()
 endif
 
 let g:NERDTreeDirArrowExpandable = '+'
