@@ -11,10 +11,6 @@ fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-case $TERM in
-    screen*)
-	export PROMPT_COMMAND=/usr/bin/true
-esac
 
 [ "$PS1" = "\\s-\\v\\\$ " ] && PS1="[\u@\h \W]\\$ "
 
@@ -29,8 +25,21 @@ if [ "$?" -eq "0" ]; then
 fi
 
 # Fix SSH auth socket location so agent forwarding works with tmux
-if test "$SSH_AUTH_SOCK" ; then
-	ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
-fi
+#if test "$SSH_AUTH_SOCK"; then
+#
+#    if [ "$SSH_AUTH_SOCK" = "~/.ssh/ssh_auth_sock" ]; then
+#        exit 0
+#    fi
+#
+#	ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+#fi
 
-# vim: ts=4 sts=4 sw=4 et
+PYTHONDONTWRITEBYTECODE="true" export PYTHONDONTWRITEBYTECODE
+
+#case $TERM in
+#    screen*)
+#	    export PROMPT_COMMAND=/usr/bin/true
+#        #SSH_AUTH_SOCK="~/.ssh/ssh_auth_sock" export SSH_AUTH_SOCK 
+#        ;;
+#esac
+# vim: ts=8 sts=8 sw=8 noet
