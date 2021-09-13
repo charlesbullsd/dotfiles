@@ -85,6 +85,8 @@ set incsearch		        " do incremental searching
 set rulerformat=%l,%c
 set listchars=tab:→\ ,trail:·,precedes:«,extends:»,eol:¶
 
+
+colorscheme default
 set background=dark
 
 au BufRead,BufNewFile *.asc set filetype=asciidoc
@@ -100,3 +102,5 @@ endif
 
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
+
+let g:vim_markdown_folding_disabled = 1
