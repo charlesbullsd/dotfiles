@@ -11,6 +11,9 @@ set nocompatible
 set backspace=indent,eol,start
 
 
+" disable the bell in Windows SFL
+set visualbell
+set t_vb=
 
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
