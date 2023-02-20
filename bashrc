@@ -34,7 +34,29 @@ fi
 #	ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
 #fi
 
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+	for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then
+			. "$rc"
+		fi
+	done
+fi
+
 PYTHONDONTWRITEBYTECODE="true" export PYTHONDONTWRITEBYTECODE
+
+alias l.='ls -d .* --color=auto'
+alias ll='ls -l --color=auto'
+alias ls='ls --color=auto'
+alias vi='vim'
+alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+alias grep='grep --color=auto'
+
+backup() { cp "$1"{,.bak}; }
+alias cmount="mount | column -t"
+
+
 
 #case $TERM in
 #    screen*)
